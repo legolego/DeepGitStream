@@ -3,13 +3,13 @@ Test of Deepnote --> Github --> Streamlit
 
 ## Get Streamlit working internally/local in Deepnote
 1. In new Deepnote, make ProjectName/Streamlit folder -> data and assets folder, add data/images
-2. Make simple Analysis notebook
+2. !pip install --upgrade pip in init.ipynb
+3. Make simple Analysis notebook
     1. pandas
     2. altair
     3. iris.csv
-3. Make Run_streamlit notebook
+4. Make Run_streamlit notebook
     1. Set working directory to ProjectName
-    1. !pip install --upgrade pip
     2. !pip install streamlit
     3. click to add it to requirements.txt
     4. Can add "pip install --upgrade pip" to Init notebook.
