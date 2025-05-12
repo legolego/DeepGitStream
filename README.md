@@ -3,23 +3,26 @@ Test of Deepnote --> Github --> Streamlit
 
 ## Get Streamlit working internally/local in Deepnote
 1. Get pip upgraded in Deepnote everytime you run it
-    1. Click on Python version dropdown on left side
+    1. Click on Python version (3.11 for data science) dropdown on left side
     2. Choose link to Initiliazation notebook on right side
-    3. Make a new line under line 2 with this command: `pip install --upgrade pip`
-2. That should've crteated a `requirements.txt` file
-    1. Delete everything in it and replace it with:
+    3. Make a new line under line 2 with this command: `pip install --upgrade pip`    
+2. Get a `requirements.txt` file created
+    1. in a code cell in `Notebook1` run: `pip install streamlit==1.45.0`
+    2. That should offer a link to move that to the `requirements.txt` file
+    3. Add Pillow to it, so it looks like this:
        ```
-       streamlit==1.34.0
-       Pillow==10.3.0
+       streamlit==1.45.0
+       Pillow==11.2.1
        ```
-3. In new Deepnote, make `MyProject/Streamlit` folder -> `data` and `assets` folders, add data/images
-4. Make simple 3 cell analysis notebook
+    4. Restart the machine, you'll have no warning about pip being old, and these libraries installed
+4. In new Deepnote, make `For_Github/Streamlit` folder -> `data` and `assets` folders, add data/images
+5. Make simple 3 cell `Analysis` notebook
     ```
     import pandas as pd
     import altair as alt
     ```
     ```
-    df_iris = pd.read_csv("MyProject/Streamlit/data/iris.csv")
+    df_iris = pd.read_csv("For_Github/Streamlit/data/iris.csv")
     df_iris
     ```
     ```
@@ -29,7 +32,7 @@ Test of Deepnote --> Github --> Streamlit
         color='variety'
     )
     ```
-5. Make Run_streamlit notebook
+6. Make Run_streamlit notebook
     ```
     from IPython.core.display import HTML
     import os
@@ -42,8 +45,8 @@ Test of Deepnote --> Github --> Streamlit
     !streamlit run ./MyProject/Streamlit/demo.py --server.port=8080 --browser.serverAddress='0.0.0.0'
     ```
     1. Set working directory to ProjectName
-6. Create /Streamlit/demo.py file
-7. Try running Run_Streamlit notebook
+7. Create /Streamlit/demo.py file
+8. Try running Run_Streamlit notebook
     1. Streamlit will run, but won't be visible in browser - 403 Forbidden
     2. Next to `Stop machine` button in bottom left, click the `...` button
     3. Slider for Allow Incoming Connections
