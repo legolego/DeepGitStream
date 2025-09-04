@@ -3,16 +3,16 @@ Test of Deepnote --> Github --> Streamlit
 
 ## Get Streamlit working internally/local in Deepnote
 1. Get pip upgraded in Deepnote everytime you run it
-    1. Click on Python version (3.11 for data science) dropdown on left side
+    1. Click on Python version (3.12 for data science) dropdown on left side
     2. Choose link to Initiliazation notebook on right side
     3. Make a new line under line 2 with this command: `pip install --upgrade pip`    
 2. Get a `requirements.txt` file created
-    1. in a code cell in `Notebook1` run: `pip install streamlit==1.45.0`
+    1. in a code cell in `Notebook1` run: `pip install streamlit==1.49.1`
     2. That should offer a link to move that to the `requirements.txt` file
     3. Add Pillow to it, so it looks like this:
        ```
        streamlit==1.45.0
-       Pillow==11.2.1
+       Pillow==11.3.0
        ```
     4. Restart the machine, you'll have no warning about pip being old, and these libraries installed
 4. In new Deepnote, make `For_Github/Streamlit` folder -> `data` and `assets` folders, add data/images
@@ -23,7 +23,7 @@ Test of Deepnote --> Github --> Streamlit
     import altair as alt
     ```
     ```
-    df_iris = pd.read_csv("For_Github/Streamlit/data/iris.csv")
+    df_iris = pd.read_csv("For_Github/Streamlit/data/IRIS.csv")
     df_iris
     ```
     ```
@@ -52,17 +52,18 @@ Test of Deepnote --> Github --> Streamlit
     2. Next to `Stop machine` button in bottom left, click the `...` button
     3. Slider for Allow Incoming Connections
     4. Try link again, it should show a page :)
-    5. Downside, you need to keep stopping and re-running Streamlit run command to see new changes in Deepnote
+    5. ~~Downside, you need to keep stopping and re-running Streamlit run command to see new changes in Deepnote~~
 
 ## Get Deepnote connected to github, not best order but we started with notebooks first
 1. In your github, create a new repo - siads593_ss25_test
     1. Add a README.md file so there's at least one commit
+    2. Can add .gitignore file for Python
 2. Add Deepnote Integration
-    1. on left side, `Integrations` -> `+` -> scroll to Github
-    2. Choose newly created repo from drop down, at bottom probably
+    1. on left side, `Integrations` -> `+` -> scroll to Github(2nd one down)
+    2. Choose newly created repo from drop down, at bottom probably --> Create integration
     3. Notice new `Github` next to new folder icon
     4. Move `Streamlit` folder from under `For_Github` to under new folder (siads593_ss25_test)
-    5. Delete ProjectName folder
+    5. Delete For_Github folder
     6. Fix path in `Analysis` and `Run_Streamlit` notebooks
     7. Check streamlit page still works
     8. Copy `requirements.txt` file to underneath `Streamlit` folder
@@ -88,7 +89,7 @@ Test of Deepnote --> Github --> Streamlit
     11. Now you should see your files in github :)
 
 ## Get Streamlit to see github
-1. Connect Github to Streamlit Community Cloud servers
+1. Connect Github to Streamlit Community Cloud servers - [https://streamlit.io](https://streamlit.io)
     1. Sign in with github account - Free
     2. `Create App` - top right
     3. Deploy a public app from Github
