@@ -15,7 +15,7 @@ Deepnote --> Github --> Streamlit
        Pillow==12.1.0
        ```
     4. Restart the machine, you'll have no warning about pip being old, and these libraries installed
-4. In new Deepnote, make `For_Github/Streamlit` folder -> `data` and `assets` folders, add data/images
+4. Under Files, make `For_Github/Streamlit` folder -> `data` and `assets` folders, add data/images
 5. Add `demo.py` file to Streamlit folder
 6. Make 3 simple cells in the `Analysis` notebook
     ```
@@ -34,7 +34,7 @@ Deepnote --> Github --> Streamlit
     )
     ```
 7. Create `Run_streamlit` notebook
-    1. Change it's working directory to: `/For_Github` (needed for the last cell)
+    1. Change it's working directory to: `/For_Github` (needed for the last cell). It will ask to restart.
     2. Add the following three cells
     ```
     from IPython.core.display import HTML
@@ -55,20 +55,20 @@ Deepnote --> Github --> Streamlit
     5. ~~Downside, you need to keep stopping and re-running Streamlit run command to see new changes in Deepnote~~
 
 ## Get Deepnote connected to github, not best order but we started with notebooks first
-1. In your github, create a new repo - siads593_ss25_test
+1. In your github, create a new repo - siads593_wi2026_test
     1. Add a README.md file so there's at least one commit
     2. Can add .gitignore file for Python
 2. Add Deepnote Integration
-    1. on left side, `Integrations` -> `+` -> scroll to Github(2nd one down)
+    1. on left side, `Integrations` (Between Notebooks and Files) -> `+` -> `+ Add a new integrations` at bottom, scroll to Github(2nd one down)
     2. Choose newly created repo from drop down, at bottom probably --> Create integration
-    3. Notice new `Github` next to new folder icon
-    4. Move `Streamlit` folder from under `For_Github` to under new folder (siads593_ss25_test)
+    3. Notice new `Github` icon next to new folder
+    4. Move `Streamlit` folder from under `For_Github` to under new folder (siads593_wi26_test)
     5. Delete For_Github folder
     6. Fix path in `Analysis` and `Run_Streamlit` notebooks
     7. Check streamlit page still works
-    8. Copy `requirements.txt` file to underneath `Streamlit` folder
+    8. Copy text from `requirements.txt` file to new `requirements.txt` inside `Streamlit` folder
 3. Push notebooks to GitHub
-    1. Click on Clock icon (version) in top right
+    1. Click on Clock icon (version history) in top right
     2. `Connect GitHub repository` button at very bottom
     3. Choose the new repository you made
     4. Change Path where notebooks will be exported to `/Deepnote/`
@@ -77,7 +77,7 @@ Deepnote --> Github --> Streamlit
     7. Add title, this is only the notebooks, not the other of the files
 4. Push the other files to GitHub
     1. Open terminal
-    2. cd siads593_ss25_test
+    2. cd siads593_wi26_test
     3. git status
     4. git remote -v
     5. git add Streamlit
