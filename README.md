@@ -1,23 +1,23 @@
 # DeepGitStream
-Test of Deepnote --> Github --> Streamlit
+Deepnote --> Github --> Streamlit
 
 ## Get Streamlit working internally/local in Deepnote
 1. Get pip upgraded in Deepnote everytime you run it
-    1. Click on Python version (3.12 for data science) dropdown on left side
+    1. Click on Python version (3.13 for data science) dropdown on left side
     2. Choose link to Initiliazation notebook on right side
-    3. Make a new line under line 2 with this command: `pip install --upgrade pip`    
+    3. Make a new line under line 2 with this command: `pip install --upgrade pip`, before the `if` statement
 2. Get a `requirements.txt` file created
-    1. in a code cell in `Notebook1` run: `pip install streamlit==1.49.1`
-    2. That should offer a link to move that to the `requirements.txt` file
+    1. in a code cell in `Notebook1` run: `!pip install streamlit`
+    2. That should offer a blue link in a yellow box to move that to the `requirements.txt` file, click on the link
     3. Add Pillow to it, so it looks like this:
        ```
-       streamlit==1.45.0
-       Pillow==11.3.0
+       streamlit==1.54.0
+       Pillow==12.1.0
        ```
     4. Restart the machine, you'll have no warning about pip being old, and these libraries installed
 4. In new Deepnote, make `For_Github/Streamlit` folder -> `data` and `assets` folders, add data/images
 5. Add `demo.py` file to Streamlit folder
-6. Make simple 3 cell `Analysis` notebook
+6. Make 3 simple cells in the `Analysis` notebook
     ```
     import pandas as pd
     import altair as alt
